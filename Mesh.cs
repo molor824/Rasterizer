@@ -119,10 +119,7 @@ public class Mesh
                 points.Add(new(point2, GetColorFromY(vertex2, vertex, i)));
             }
 
-            if (points.Count < 2)
-            {
-                return;
-            }
+            if (points.Count < 2) return;
 
             DrawLine(screen, points[0], points[1]);
         });

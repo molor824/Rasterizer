@@ -1,7 +1,7 @@
 ﻿var width = 800;
 var height = 600;
 
-var screen = new Screen(800 / 2, 600 / 2);
+var screen = new Screen(800, 600);
 var cube = new Mesh(
     new Vertex[]
     {
