@@ -9,10 +9,10 @@ var cube = new Mesh(
         new(new(-0.5f, 0.5f, 0.5f), Color.RED),
         new(new(-0.5f, 0.5f, -0.5f), Color.RED),
         new(new(0.5f, 0.5f, -0.5f), Color.RED),
-        new(new(0.5f, -0.5f, 0.5f), Color.YELLOW),
-        new(new(-0.5f, -0.5f, 0.5f), Color.YELLOW),
-        new(new(-0.5f, -0.5f, -0.5f), Color.YELLOW),
-        new(new(0.5f, -0.5f, -0.5f), Color.YELLOW)
+        new(new(0.5f, -0.5f, 0.5f), Color.GREEN),
+        new(new(-0.5f, -0.5f, 0.5f), Color.GREEN),
+        new(new(-0.5f, -0.5f, -0.5f), Color.GREEN),
+        new(new(0.5f, -0.5f, -0.5f), Color.GREEN)
     },
     new int[]
     {
@@ -24,30 +24,22 @@ var cube = new Mesh(
         3, 7, 4, 3, 0, 4,
     }
 );
-var triangle = new Mesh(
-    new Vertex[]
-    {
+var triangleVertices = new Vertex[]
+{
         new(new(0, 0.5f, 0), Color.RED),
         new(new(0.5f, -0.5f, 0), Color.GREEN),
         new(new(-0.5f, -0.5f, 0), Color.BLUE)
-    },
-    new int[] { 0, 1, 2 }
-);
-var triangle1 = new Mesh(
-    new Vertex[]
-    {
-        new(new(0, 0.5f, 0), Color.RED),
-        new(new(0.5f, -0.5f, 0), Color.GREEN),
-        new(new(-0.5f, -0.5f, 0), Color.BLUE)
-    },
-    new int[] { 0, 1, 2 }
-);
+};
+var triangleIndices = new int[] { 0, 1, 2 };
+var triangle = new Mesh(triangleVertices, triangleIndices);
+var triangle1 = new Mesh(triangleVertices, triangleIndices);
 
 cube.Scale = new(0.4f, 0.4f, 0.4f);
 
 screen.Meshes.Add(cube);
 screen.Meshes.Add(triangle);
 screen.Meshes.Add(triangle1);
+
 Raylib.InitWindow(width, height, "Rasterizer");
 Raylib.SetTargetFPS(60);
 
